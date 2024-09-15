@@ -1,10 +1,10 @@
 {
- "staticUsers": {
-  "buyers": {
-   "testingTalk": {
-    "email": "testing-talk@example.com",
-    "password": "superSecretPassword!!!"
+    "staticUsers": {
+     "buyers": {
+      "testingTalk": {
+       "email": "testing-talk@example.com",
+       "password": "superSecretPassword!!!"
+      }
+     }
+    }
    }
-  }
- }
-}

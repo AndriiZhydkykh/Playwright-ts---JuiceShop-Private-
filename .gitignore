@@ -4,3 +4,4 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 domain docker.txt
+playwright/.auth

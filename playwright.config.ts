@@ -20,31 +20,46 @@ export default defineConfig({
   retries: 1,
   /* Opt out of parallel tests on CI. */
   workers: 3,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+ 
+ 
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'https://rough-casey-testingtalk-13d498f2.koyeb.app',
-    screenshot: 'only-on-failure',
-    trace: 'on-first-retry',
-   },
-
+   baseURL: 'https://mental-arline-testingtalk-42e6e59b.koyeb.app',
+   screenshot: 'only-on-failure',
+   trace: 'on-first-retry',
+  },
+ 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+   { name: 'setup', testMatch: /.*\.setup\.ts/ },
+   {
+    name: 'chromium',
+    use: {
+     ...devices['Desktop Chrome'],
+     storageState: 'playwright/.auth/user.json',
     },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+    dependencies: ['setup'],
+   },
+ 
+   {
+    name: 'firefox',
+    use: {
+     ...devices['Desktop Firefox'],
+     storageState: 'playwright/.auth/user.json',
     },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+    dependencies: ['setup'],
+   },
+ 
+   {
+    name: 'webkit',
+    use: {
+     ...devices['Desktop Safari'],
+     storageState: 'playwright/.auth/user.json',
     },
+    dependencies: ['setup'],
+   },
+ 
 
     /* Test against mobile viewports. */
     // {

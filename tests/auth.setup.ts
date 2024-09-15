@@ -1,6 +1,7 @@
 import { HomePage, LoginPage } from '../app/page/index';
-import { test as setup, expect } from '@playwright/test'
+import { test as setup, expect } from '@playwright/test';
 import userData from '../app/data/user.json';
+
 const authFile = 'playwright/.auth/user.json';
 
  setup('authenticate', async ({ page }) => {
@@ -18,7 +19,7 @@ const authFile = 'playwright/.auth/user.json';
  await loginPage.setEmailField(email);
  await loginPage.setPasswordField(password);
  await loginPage.clickSubmitBtn();
- await page.waitForURL('https://rough-casey-testingtalk-13d498f2.koyeb.app/#/search');
+ await page.waitForURL('https://mental-arline-testingtalk-42e6e59b.koyeb.app/#/search');
  await loginPage.header.expectLoaded();
  await expect(await loginPage.header.getBasket()).toBeVisible();
  await loginPage.header.clickAccountButton();

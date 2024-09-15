@@ -1,0 +1,55 @@
+{
+  "cookies": [
+    {
+      "name": "language",
+      "value": "en",
+      "domain": "mental-arline-testingtalk-42e6e59b.koyeb.app",
+      "path": "/",
+      "expires": 1757937060,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "welcomebanner_status",
+      "value": "dismiss",
+      "domain": "mental-arline-testingtalk-42e6e59b.koyeb.app",
+      "path": "/",
+      "expires": 1757937061,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookieconsent_status",
+      "value": "dismiss",
+      "domain": "mental-arline-testingtalk-42e6e59b.koyeb.app",
+      "path": "/",
+      "expires": 1757937061,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "token",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJ0ZXN0aW5nLXRhbGtAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IjM5MTM2OGYxMzQ2MzMzZjZiYTcyMTcyZWJmZGQ4M2ZhIiwicm9sZSI6ImN1c3RvbWVyIiwiZGVsdXhlVG9rZW4iOiIiLCJsYXN0TG9naW5JcCI6IjAuMC4wLjAiLCJwcm9maWxlSW1hZ2UiOiIvYXNzZXRzL3B1YmxpYy9pbWFnZXMvdXBsb2Fkcy9kZWZhdWx0LnN2ZyIsInRvdHBTZWNyZXQiOiIiLCJpc0FjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyNC0wOS0xNSAxMToyOTozMi4xOTQgKzAwOjAwIiwidXBkYXRlZEF0IjoiMjAyNC0wOS0xNSAxMToyOTozMi4xOTQgKzAwOjAwIiwiZGVsZXRlZEF0IjpudWxsfSwiaWF0IjoxNzI2NDAxMDY0fQ.SW6OzciPx1IHf6qaiWp7kt4ASgaSgrEFISn3l1mq0yO8SC_hR6ys9FvH6NniAZ5nrx4mIOH-qt3UDC0KrCOlO4A56zYL1tmVfZS9HryFAnJ8NvkKHhYnyQxMxomPwXCmZpM4jdF6c8MlMm_uYGPl0yItQKod-xLT53jadI5jUOY",
+      "domain": "mental-arline-testingtalk-42e6e59b.koyeb.app",
+      "path": "/",
+      "expires": 1726429863,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://mental-arline-testingtalk-42e6e59b.koyeb.app",
+      "localStorage": [
+        {
+          "name": "token",
+          "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJ0ZXN0aW5nLXRhbGtAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IjM5MTM2OGYxMzQ2MzMzZjZiYTcyMTcyZWJmZGQ4M2ZhIiwicm9sZSI6ImN1c3RvbWVyIiwiZGVsdXhlVG9rZW4iOiIiLCJsYXN0TG9naW5JcCI6IjAuMC4wLjAiLCJwcm9maWxlSW1hZ2UiOiIvYXNzZXRzL3B1YmxpYy9pbWFnZXMvdXBsb2Fkcy9kZWZhdWx0LnN2ZyIsInRvdHBTZWNyZXQiOiIiLCJpc0FjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyNC0wOS0xNSAxMToyOTozMi4xOTQgKzAwOjAwIiwidXBkYXRlZEF0IjoiMjAyNC0wOS0xNSAxMToyOTozMi4xOTQgKzAwOjAwIiwiZGVsZXRlZEF0IjpudWxsfSwiaWF0IjoxNzI2NDAxMDY0fQ.SW6OzciPx1IHf6qaiWp7kt4ASgaSgrEFISn3l1mq0yO8SC_hR6ys9FvH6NniAZ5nrx4mIOH-qt3UDC0KrCOlO4A56zYL1tmVfZS9HryFAnJ8NvkKHhYnyQxMxomPwXCmZpM4jdF6c8MlMm_uYGPl0yItQKod-xLT53jadI5jUOY"
+        }
+      ]
+    }
+  ]
+}

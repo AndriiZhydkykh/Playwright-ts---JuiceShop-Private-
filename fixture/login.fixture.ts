@@ -15,7 +15,7 @@ type MyFixtures = {
   newUser: UserContext;
 };
 
-export const newUserIsNotAuthTest = base.extend<MyFixtures>({
+export const newUserIsNotAuthFixture = base.extend<MyFixtures>({
   storageState: {
     cookies: [],
     origins: [],
