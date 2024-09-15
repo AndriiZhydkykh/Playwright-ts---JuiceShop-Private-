@@ -1,15 +1,15 @@
-import { App } from "../page.holder";
+import { AppPage } from "../page.holder";
 import { Header, WelcomeBanner, CookiesWindow } from "../component";
+import { step } from "../../misc/reporters/step";
 
-export class HomePage extends App {
-    constructor(page) {
-        super(page)
-    }
-    header = new Header(this.page);
-    welcomeBanner = new WelcomeBanner(this.page);
-    cookiesWindow = new CookiesWindow(this.page);
+export class HomePage extends AppPage {
+    public pagePath = '#/'
 
+    public header = new Header(this.page);
+    public welcomeBanner = new WelcomeBanner(this.page);
+    public cookiesWindow = new CookiesWindow(this.page);
 
+    @step()
     async open() {
         await super.open('#/');
         await this.header.expectLoaded();

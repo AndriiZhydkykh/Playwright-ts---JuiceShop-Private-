@@ -1,16 +1,15 @@
 import { RequestHolder } from './request.holder'
-
+import { UserCreateRequest, UserCreatedResponse } from './models';
 export class AuthController extends RequestHolder{
-    constructor(request){
-     super(request)
-    }
-
-   async createNewUser (data){
-    const resp = await this.request.post('https://rough-casey-testingtalk-13d498f2.koyeb.app/api/Users/', {
+   
+   async createNewUser (data:UserCreateRequest) : Promise<UserCreatedResponse> {
+    const resp = await this.request.post('https://rough-casey-testingtalk-13d498f2.koyeb.app/api/Users/', 
+    {
       data
     }
    );
-    return resp.json();
+   
+    return resp.json() as Promise<UserCreatedResponse>;
    }
      
 }

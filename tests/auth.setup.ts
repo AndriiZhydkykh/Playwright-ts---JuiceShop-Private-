@@ -3,7 +3,7 @@ import { test as setup, expect } from '@playwright/test'
 import userData from '../app/data/user.json';
 const authFile = 'playwright/.auth/user.json';
 
-setup('authenticate', async ({ page }) => {
+ setup('authenticate', async ({ page }) => {
  const { email, password } = userData.staticUsers.buyers.testingTalk;
 
  const homePage = new HomePage(page)
@@ -26,3 +26,4 @@ setup('authenticate', async ({ page }) => {
 
  await page.context().storageState({ path: authFile });
 });
+

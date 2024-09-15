@@ -1,33 +1,25 @@
-/**
-   * @param {import('@playwright/test').Page} page
-*/
+import type { Page } from '@playwright/test';
+import { step } from '../misc/reporters/step';
 
-export class PageHolder {
- constructor(page) {
-  this.page = page;
- }
+export class PageHolder { 
+    constructor(protected page: Page) { }
+}
+export  class Component extends PageHolder {
 
 }
 
-export class App extends PageHolder {
- constructor(page) {
-  super(page)
- }
+export abstract class AppPage extends Component {
+    /**
+     * Path to the page can be relative to the baseUrl defined in playwright.config.ts
+     * or absolute (on your own risk)
+     */
+    public abstract pagePath: string;
 
- async open(url) {
-  await this.page.goto('/' + url);
- }
-
+    /**
+     * Opens the page in the browser and expectLoaded should pass
+     */
+    @step()
+    async open(path?: string) {
+        await this.page.goto(path ?? this.pagePath);
+    }
 }
-
-export class Component extends PageHolder {
- constructor(page) {
-  super(page)
- }
-}
-
-
-
-
-
-

@@ -1,6 +1,5 @@
+import { APIRequestContext } from "@playwright/test";
 
-export class RequestHolder {
- constructor(request) {
-   this.request = request;
- }
+export abstract class RequestHolder {
+  constructor(protected request: APIRequestContext) {}
 }

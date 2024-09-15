@@ -1,41 +1,51 @@
-import base from '@playwright/test'
+import { test as base } from '@playwright/test';
 import { AuthController } from '../api/index'
 import { HomePage, LoginPage } from '../app/page/index'
-export const notAuthNewUser = base.test.extend({
- storageState: {
-  cookies: [],
-  origins: [],
-},
- authController: async ({request }, use) => {
+import { UserCreateRequest, UserCreatedResponse } from "../api/models";
 
-  const regNewUserDate = {
-    "email": `test${crypto.randomUUID()}@test.com`,
-    "password": "superSecretPassword!!!",
-    "passwordRepeat": "superSecretPassword!!!",
-    "securityAnswer": "Nadia",
-    "securityQuestion": {
-     "id": 5,
-     "question": "Maternal grandmother's first name?"
-    }
-   };
+interface UserContext {
+  userModel: UserCreateRequest;
+  createdUser: UserCreatedResponse;
+}
 
-  const authController = new AuthController(request);
-  const userData  = await authController.createNewUser(regNewUserDate);
-  await use({ authController, userData });
- },
- homePage: async ({ page }, use) => {
-  const homePage = new HomePage(page)
-  await use(homePage);
- },
- loginPage: async ({ page }, use) => {
- const loginPage = new LoginPage(page)
- await use(loginPage);
- },
- userData: async ({ authController }, use) => {
-  const userData = authController.userData; 
-  await use(userData);
-},
+type MyFixtures = {
+  homePage: HomePage;
+  loginPage: LoginPage;
+  authController: AuthController;
+  newUser: UserContext;
+};
+
+export const newUserIsNotAuthTest = base.extend<MyFixtures>({
+  storageState: {
+    cookies: [],
+    origins: [],
+  },
+  newUser: async ({ request }, use) => {
+
+    const userModel = {
+      "email": `test${crypto.randomUUID()}@test.com`,
+      "password": "superSecretPassword!!!",
+      "passwordRepeat": "superSecretPassword!!!",
+      "securityAnswer": "Nadia",
+      "securityQuestion": {
+        "id": 5,
+        "question": "Maternal grandmother's first name?"
+      }
+    };
+
+    const authController = new AuthController(request);
+    const createdUser = await authController.createNewUser(userModel);
+    await use({ userModel, createdUser });
+  },
+  homePage: async ({ page }, use) => {
+    const homePage = new HomePage(page)
+    await use(homePage);
+  },
+  loginPage: async ({ page }, use) => {
+    const loginPage = new LoginPage(page)
+    await use(loginPage);
+  },
 });
 
-export const expect = base.expect;
+export { expect } from '@playwright/test';
 

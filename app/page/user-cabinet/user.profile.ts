@@ -1,18 +1,14 @@
-import { App } from '../../page.holder';
+import { AppPage } from '../../page.holder';
+import { step } from "../../../misc/reporters/step";
 
-export class UserProfilePage extends App {
-    constructor(page) {
-        super(page)
-    }
-    #emailField = this.page.locator('input#email');
+export class UserProfilePage extends AppPage {
+    public pagePath = 'profile'
+    private emailField = this.page.locator('input#email');
 
+    @step()
     async getEmailField() {
-        return this.#emailField;
-    }
-
-    async open() {
-        await super.open('profile');
-    }
+        return this.emailField;
+    }   
 }
 
 

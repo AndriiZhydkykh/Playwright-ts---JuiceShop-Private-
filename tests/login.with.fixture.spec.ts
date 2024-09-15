@@ -1,7 +1,6 @@
-import { notAuthNewUser, expect } from '../fixture/login.fixture';
-import { regNewUserDate } from '../app/data/user.data';
+import { newUserIsNotAuthTest, expect } from '../fixture/login.fixture';
 
-notAuthNewUser('ID-3 - fixture example ', async ({ homePage, loginPage, authController, userData }) => {
+newUserIsNotAuthTest('ID-3 - fixture example ', async ({ homePage, loginPage, newUser }) => {
   await homePage.open();
   await homePage.welcomeBanner.clickCloseWelcomeBannerButton();
   await homePage.cookiesWindow.clickDismissCookiesButton();
@@ -9,8 +8,8 @@ notAuthNewUser('ID-3 - fixture example ', async ({ homePage, loginPage, authCont
   await homePage.header.clickLoginButton();
   await expect(await homePage.header.getLoginButton()).toBeHidden();
 
-  await loginPage.setEmailField(userData.data.email);
-  await loginPage.setPasswordField(regNewUserDate.password);
+  await loginPage.setEmailField(newUser.createdUser.data.email);
+  await loginPage.setPasswordField(newUser.userModel.password);
   await loginPage.clickSubmitBtn();
   await loginPage.header.expectLoaded();
   await expect(await loginPage.header.getBasket()).toBeVisible();
